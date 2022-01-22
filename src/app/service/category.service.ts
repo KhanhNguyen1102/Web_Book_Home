@@ -13,7 +13,8 @@ export class CategoryService {
   getAll() :Observable<Category[]>{
     return this.http.get<Category[]>(api_url+'findAllCategory')
   }
-  findOne():Observable<Home[]>{
-    return this.http.get<Home[]>(api_url)
+  // @ts-ignore
+  findOne(id):Observable<Home[]>{
+    return this.http.get<Home[]>(api_url+'findAllCategory/'+id)
   }
 }

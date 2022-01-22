@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CategoryService} from "../../../service/category.service";
 import {Category} from "../../../model/category";
+import {ActivatedRoute, ParamMap} from "@angular/router";
+import {Home} from "../../../model/home";
 
 @Component({
   selector: 'app-category-list',
@@ -9,12 +11,17 @@ import {Category} from "../../../model/category";
 })
 export class CategoryListComponent implements OnInit {
   categories :Category[]=[]
-  constructor(private categoryService: CategoryService) { }
+  homes:Home[]=[]
+  constructor(private categoryService: CategoryService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.categoryService.getAll().subscribe(result =>{
-      this.categories=result
-      console.log(this.categories)
+    this.activatedRoute.paramMap.subscribe((paraMap: ParamMap) => {
+      let id = paraMap.get('id')
+      console.log(id)
+      this.categoryService.findOne(id).subscribe(result =>{
+        this.homes=result
+        console.log(this.homes)
+      })
     })
   }
 

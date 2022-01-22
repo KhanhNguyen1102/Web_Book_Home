@@ -4,7 +4,7 @@ import {CategoryListComponent} from "./category-list/category-list.component";
 
 const routes: Routes = [
   {
-    path :'list',
+    path :'findAll/:id',
     component: CategoryListComponent
   }
 ];

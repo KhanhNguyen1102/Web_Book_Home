@@ -13,13 +13,12 @@ export class HeaderComponent implements OnInit {
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
-    this.categoryService.getAll().subscribe(result =>{
-      this.categories=result
+    this.categoryService.getAll().subscribe(result => {
+      this.categories = result
       console.log(this.categories)
-    },error => {
+    }, error => {
       console.log(error)
     })
+
   }
-
-
 }
