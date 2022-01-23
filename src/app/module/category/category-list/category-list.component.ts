@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CategoryService} from "../../../service/category.service";
 import {Category} from "../../../model/category";
-import {ActivatedRoute, ParamMap} from "@angular/router";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {Home} from "../../../model/home";
 
 @Component({
@@ -13,7 +13,8 @@ export class CategoryListComponent implements OnInit {
   categories :Category[]=[]
   homes:Home[]=[]
   constructor(private categoryService: CategoryService,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private router:Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((paraMap: ParamMap) => {
@@ -25,5 +26,10 @@ export class CategoryListComponent implements OnInit {
       })
     })
   }
+  // @ts-ignore
+  findOneHome(id){
+    this.router.navigate(['homes/findOne/'+id])
+  }
+
 
 }

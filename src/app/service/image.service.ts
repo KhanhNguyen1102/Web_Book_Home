@@ -12,6 +12,6 @@ export class ImageService {
 
    // @ts-ignore
   findAllImgByHome(id): Observable<Image[]>{
-    return this.http.get<Image[]>(api_url+'/findAllImg?'+id)
+    return this.http.get<Image[]>(api_url+'/findAllImg?idH='+id)
    }
 }
