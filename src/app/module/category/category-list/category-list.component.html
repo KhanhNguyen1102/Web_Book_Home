@@ -1,66 +1,33 @@
 <div class="row mt-5">
-
-<!--<div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let home of homes">-->
-<!--  <div class="flat-item">-->
-<!--    <div class="flat-item-image">-->
-<!--      <span class="for-sale f1">{{home.name}}</span>-->
-<!--      <a href="#" id="${imgHome}"></a>-->
-<!--      <div class="flat-link">-->
-<!--        <a class="f1"  href="#" >gm chi tiết</a>-->
-<!--      </div>-->
-<!--      <ul class="flat-desc">-->
-<!--        <li>-->
-
-<!--          <span class="f1">{{home.address}}</span>-->
-<!--        </li>-->
-<!--        <li>-->
-
-<!--          <span class="f1">{{home.bedroom}}</span>-->
-<!--        </li>-->
-<!--        <li>-->
-
-<!--          <span class="f1">{{home.showerRoom}}</span>-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--    </div>-->
-<!--    <div class="flat-item-info">-->
-<!--      <div class="flat-title-price">-->
-<!--        <h5  class="f1"><a href="properties-details.html">{{home.name}}</a></h5>-->
-<!--        <span class="price f1">{{home.price}}VNĐ</span>-->
-<!--      </div>-->
-<!--      <p class="f1"><img src="images/icons/location.png" alt="">{{home.address}}</p>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
   <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let home of homes">
     <div class="flat-item">
       <div class="flat-item-image">
-        <span class="for-sale f1">{{home.name}}</span>
-      <img src="../../../../assets/images/avatar/phongbep.jpg" height="389" width="760"/>
+        <span class="for-sale f1">{{home.statusHome?.name}}</span>
+      <img src="../../../../assets/images/avatar/avt.jpg" height="389" width="760"/>
         <div class="flat-link">
-          <a class="f1" onclick="goDetailsHome(${data[i].id})" href="#" >gm chi tiết</a>
+          <a class="f1"  >Chi Tiết</a>
         </div>
         <ul class="flat-desc">
           <li>
             <img src="../../../../assets/images/icons/4.png" alt="">
-            <span class="f1">ddd</span>
+            <span class="f1">{{home.description}}</span>
           </li>
           <li>
             <img src="../../../../assets/images/icons/5.png" alt="">
-            <span class="f1">ddd</span>
+            <span class="f1">{{home.bedroom}}</span>
           </li>
           <li>
             <img src="../../../../assets/images/icons/6.png" alt="">
-            <span class="f1">ko</span>
+            <span class="f1">{{home.showerRoom}}</span>
           </li>
         </ul>
       </div>
       <div class="flat-item-info">
         <div class="flat-title-price">
-          <h5  class="f1"><a href="properties-details.html">sa</a></h5>
-          <span class="price f1">VNĐ</span>
+          <h5  class="f1"><a href="properties-details.html">{{home.name}}</a></h5>
+          <span class="price f1">{{home.price}}VNĐ</span>
         </div>
-        <p class="f1"><img src="../../../../assets/images/icons/location.png" alt="">đọa</p>
+        <p class="f1"><img src="../../../../assets/images/icons/location.png" alt="">{{home.address}}</p>
       </div>
     </div>
   </div>

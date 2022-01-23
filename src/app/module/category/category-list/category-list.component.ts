@@ -12,7 +12,8 @@ import {Home} from "../../../model/home";
 export class CategoryListComponent implements OnInit {
   categories :Category[]=[]
   homes:Home[]=[]
-  constructor(private categoryService: CategoryService, private activatedRoute: ActivatedRoute) { }
+  constructor(private categoryService: CategoryService,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((paraMap: ParamMap) => {
