@@ -13,4 +13,7 @@ export class HomeService {
   findOne(id) : Observable<Home>{
     return this.http.get<Home>(api_url+'/'+id)
   }
+  show5Home() :Observable<Home[]>{
+    return this.http.get<Home[]>(api_url+'/find5HomeMostRated')
+  }
 }
