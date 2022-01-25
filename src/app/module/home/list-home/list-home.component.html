@@ -1,1 +1,65 @@
-<p>list-home works!</p>
+<div id="body2">
+  <div class="featured-flat-area pb-60">
+    <!--    <button class="f1 f4 submit-btn-1 " onclick="back()">Quay lại</button>-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title-2 text-center"><br>
+            <h2 class="f1 f5">Các Căn Có Thể Thuê</h2>
+          </div>
+        </div>
+      </div>
+      <div class="featured-flat">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let home of homes; let i = index">
+            <div class="flat-item">
+              <div class="flat-item-image">
+                <span style="  font-family: 'Comforter', cursive;  font-family: 'Open Sans', sans-serif;"
+                      class="for-sale">{{home?.statusHome?.name}}</span>
+                <div *ngFor="let img of images">
+                  <div *ngIf="img.home?.id == home.id">
+                    <a href="#"><img src="assets/images/{{img.links}}" alt=""></a>
+                  </div>
+                </div>
+
+                <div class="flat-link">
+                  <a class="f1" (click)="findOneHome(home.id)"  >Xem chi tiết</a>
+                </div>
+                <ul class="flat-desc">
+                  <li>
+                    <img src="assets/images/icons/4.png" alt="">
+                    <span class="f1">{{home.area}}</span>
+                  </li>
+                  <li>
+                    <img src="assets/images/icons/5.png" alt="">
+                    <span class="f1">{{home.bedroom}}</span>
+                  </li>
+                  <li>
+                    <img src="assets/images/icons/6.png" alt="">
+                    <span class="f1">{{home.showerRoom}}</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="flat-item-info">
+                <div class="flat-title-price">
+                  <h5><a class="f1" routerLink="{{home.id}}">{{home.name}}</a></h5>
+                  <span class="f1 price">{{home.price}}VNĐ</span>
+                </div>
+                <p class="f1"><img src="assets/images/icons/location.png" alt="">{{home.address}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="pagination-area mb-60">
+              <ul class="pagination-list text-center">
+                <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
