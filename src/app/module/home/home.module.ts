@@ -7,12 +7,18 @@ import { OrderComponent } from './order/order.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
 import { ListHomeComponent } from './list-home/list-home.component';
+import { CreateHomeComponent } from './create-home/create-home.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../../../environments/environment";
 
 
 @NgModule({
   declarations: [
     FindOneComponent,
     ListHomeComponent,
+    CreateHomeComponent,
     OrderComponent,
     HomePageComponent,
 
@@ -22,7 +28,10 @@ import { ListHomeComponent } from './list-home/list-home.component';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    ReactiveFormsModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ]
 })
 export class HomeModule { }

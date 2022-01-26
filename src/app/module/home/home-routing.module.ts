@@ -4,6 +4,7 @@ import {CategoryListComponent} from "../category/category-list/category-list.com
 import {FindOneComponent} from "./find-one/find-one.component";
 import {HomePageComponent} from "./home-page/home-page.component";
 import {ListHomeComponent} from "./list-home/list-home.component";
+import {CreateHomeComponent} from "./create-home/create-home.component";
 
 const routes: Routes = [
   {
@@ -11,14 +12,19 @@ const routes: Routes = [
     component: FindOneComponent
   },
   {
-    path :'findALL',
+    path :'findAll',
     component: ListHomeComponent
+  },
+  {
+    path :'create',
+    component: CreateHomeComponent
   },
   {
     path :'',
     component: HomePageComponent
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
