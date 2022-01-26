@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Hometime} from "../model/hometime";
 import {Order} from "../model/order";
+import {OrderService} from "./order.service";
 const API_URL = 'http://localhost:8080/api/hometimes/'
 const API_URL_ORDER = 'http://localhost:8080/api/orders/'
 @Injectable({
@@ -10,7 +11,8 @@ const API_URL_ORDER = 'http://localhost:8080/api/orders/'
 })
 export class HometimeService {
 
-  constructor(private httpClient : HttpClient) { }
+  constructor(private httpClient : HttpClient,
+              private orderService :OrderService) { }
 
   listAllHomeTime(): Observable<Hometime[]> {
     return this.httpClient.get<Hometime[]>(API_URL);
@@ -38,7 +40,7 @@ export class HometimeService {
   }
 
   saveOrder(order: Order): Observable<Order> {
-    console.log("vào save oder")
+    return this.orderService.saveOrder(order)
     return this.httpClient.post<Order>("http://localhost:8080/api/orders", order);
   }
 

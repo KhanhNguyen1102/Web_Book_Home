@@ -10,6 +10,7 @@ import {environment} from "../environments/environment";
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import {HttpClientModule} from "@angular/common/http";
+import {HomeModule} from "./module/home/home.module";
 
 @NgModule({
   declarations: [
@@ -18,15 +19,16 @@ import {HttpClientModule} from "@angular/common/http";
     FooterComponent,
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AngularFireStorageModule,
-    HttpClientModule
-    // AngularFireModule.initializeApp(environment.firebaseConfig,'cloud')
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AngularFireStorageModule,
+        HttpClientModule,
+        HomeModule,
+        // AngularFireModule.initializeApp(environment.firebaseConfig,'cloud')
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
