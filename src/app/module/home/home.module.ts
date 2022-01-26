@@ -9,13 +9,22 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../../../environments/environment";
+import { OrderComponent } from './order/order.component';
+import { HomePageComponent } from './home-page/home-page.component';
+
 
 
 @NgModule({
   declarations: [
     FindOneComponent,
     ListHomeComponent,
-    CreateHomeComponent
+    CreateHomeComponent,
+    OrderComponent,
+    HomePageComponent,
+
+  ],
+  exports: [
+    HomePageComponent
   ],
   imports: [
     CommonModule,

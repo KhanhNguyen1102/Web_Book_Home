@@ -4,6 +4,7 @@ import {CategoryListComponent} from "../category/category-list/category-list.com
 import {FindOneComponent} from "./find-one/find-one.component";
 import {ListHomeComponent} from "./list-home/list-home.component";
 import {CreateHomeComponent} from "./create-home/create-home.component";
+import {HomePageComponent} from "./home-page/home-page.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path :'create',
     component: CreateHomeComponent
+  },
+  {
+    path :'',
+    component: HomePageComponent
   }
 ];
 
