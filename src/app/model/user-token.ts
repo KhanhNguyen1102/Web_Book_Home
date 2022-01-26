@@ -1,6 +1,6 @@
 import {Role} from "./role";
 
-export interface User {
+export interface UserToken {
   id?:string,
   username?:string,
   password?:string,

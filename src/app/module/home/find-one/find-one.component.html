@@ -12,9 +12,8 @@
       <!--                             pro-details-image -->
       <div class="pro-details-image mb-60">
         <div class="pro-details-big-image">
-
-          <div  style=" float: left;margin-top: 10px;margin-right: 13.4px !important;"
-            class="tab-content" *ngFor=" let img of image,index as i">
+          <div style=" float: left;margin-top: 10px;margin-right: 13.4px !important;"
+               class="tab-content" *ngFor=" let img of image,index as i">
             <div role="tabpanel" class="tab-pane fade in active" id="pro-{{i}}">
               <a href="../../../../assets/images/{{img.links}}" data-lightbox="image-1" data-title="Sheltek Properties - {{i+1}}" >
                 <img src="../../../../assets/images/{{img.links}}" alt="">

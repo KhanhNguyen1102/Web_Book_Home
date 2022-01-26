@@ -11,13 +11,17 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import {HttpClientModule} from "@angular/common/http";
 import {HomeModule} from "./module/home/home.module";
+import { LoginComponent } from './module/user/login/login.component';
+
+import { AdminComponent } from './module/user/admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-
+    LoginComponent,
+    AdminComponent,
   ],
     imports: [
         BrowserModule,
