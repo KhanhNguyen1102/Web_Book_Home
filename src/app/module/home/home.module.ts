@@ -6,11 +6,13 @@ import { FindOneComponent } from './find-one/find-one.component';
 import { OrderComponent } from './order/order.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
+import { ListHomeComponent } from './list-home/list-home.component';
 
 
 @NgModule({
   declarations: [
     FindOneComponent,
+    ListHomeComponent,
     OrderComponent,
     HomePageComponent,
 

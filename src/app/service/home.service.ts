@@ -1,19 +1,36 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Home} from "../model/home";
-const api_url='http://localhost:8080/api/homes'
+import {Image} from "../model/image";
+
+const api_url = 'http://localhost:8080/api/homes'
+
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
+
+  showListHomeAll(): Observable<Home[]> {
+    return this.http.get<Home[]>(api_url)
+  }
+
   // @ts-ignore
-  findOne(id) : Observable<Home>{
-    return this.http.get<Home>(api_url+'/'+id)
+  getListImg(idH) {
+    return this.http.get<Image[]>(api_url + '/findAllImg?idH=' + idH)
   }
-  show5Home() :Observable<Home[]>{
-    return this.http.get<Home[]>(api_url+'/find5HomeMostRated')
+
+  // @ts-ignore
+  findOne(id): Observable<Home> {
+    return this.http.get<Home>(api_url + '/' + id)
   }
+
+  show5Home(): Observable<Home[]> {
+    return this.http.get<Home[]>(api_url + '/find5HomeMostRated')
+  }
+
+
 }
