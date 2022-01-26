@@ -10,12 +10,18 @@ import {environment} from "../environments/environment";
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import {HttpClientModule} from "@angular/common/http";
+import { LoginComponent } from './module/user/login/login.component';
+import { RegisterComponent } from './module/user/register/register.component';
+import { AdminComponent } from './module/user/admin/admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    LoginComponent,
+    RegisterComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

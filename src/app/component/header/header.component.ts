@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Category} from "../../model/category";
 import {CategoryService} from "../../service/category.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,8 @@ import {CategoryService} from "../../service/category.service";
 export class HeaderComponent implements OnInit {
 
   categories :Category[]=[]
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService,private activatedRoute: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.categoryService.getAll().subscribe(result => {
@@ -20,5 +22,9 @@ export class HeaderComponent implements OnInit {
       console.log(error)
     })
 
+  }
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['login'])
   }
 }

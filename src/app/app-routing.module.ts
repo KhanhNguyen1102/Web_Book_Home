@@ -9,7 +9,10 @@ const routes: Routes = [
   },{
     path:"homes",
     loadChildren :() => import ('./module/home/home.module').then(module =>module.HomeModule)
-  },
+  },{
+  path:"login",
+    loadChildren :() => import('./module/user/user.module').then(module => module.UserModule)
+  }
 
 ];
 

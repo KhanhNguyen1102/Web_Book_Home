@@ -96,19 +96,19 @@
                     <li><a href="features.html">Đặc trưng</a></li>
                     <li><a href="service.html">Dịch vụ</a></li>
                     <li><a href="service-details.html">Chi tiết dịch vụ</a></li>
-                    <li class="f1"><a href="" onclick="login()">Đăng nhập</a></li>
+                    <li class="f1"><a href="" >Đăng nhập</a></li>
 
-                    <li class="f1"><a href="" onclick="logout()">Đăng xuất</a></li>
+                    <li class="f1"><a href="" >Đăng xuất</a></li>
                   </ul>
                 </li>
                 <li class="f1"><a href="blog.html">Blog</a>
                   <ul class="drop-menu menu-right">
                     <li><a href="blog.html">Blog</a></li>
-
                     <li><a href="single-blog.html">Single Bloge</a></li>
                   </ul>
                 </li>
-                <li class="f1" id="logout"><a href="#" onclick="logout()">Đăng xuất</a></li>
+                <li class="f1" id="logout"><a (click)="logout()">Đăng xuất</a></li>
+                <li class="f1" id="login"><a href="#" [routerLink]="['login/']">Đăng nhập</a></li>
               </ul>
             </nav>
           </div>
