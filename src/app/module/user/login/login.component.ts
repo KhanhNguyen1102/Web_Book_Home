@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthenticationService} from "../../../service/authentication.service";
 import {first} from "rxjs";
+import {UserService} from "../../../service/user.service";
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,11 @@ export class LoginComponent implements OnInit {
     username: new FormControl(''),
     password: new FormControl('')
   });
+  registerForm: FormGroup = new FormGroup({
+    newUserName: new FormControl(''),
+    newPassWord: new FormControl(''),
+    newConfirmPassWord : new FormControl('')
+  })
   // @ts-ignore
   returnUrl: string;
   // @ts-ignore
@@ -25,7 +31,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
-              private authenticationService: AuthenticationService) {
+              private authenticationService: AuthenticationService,
+              private  userService :UserService) {
     console.log(this.authenticationService.currentUserValue);
   }
 
@@ -59,5 +66,21 @@ export class LoginComponent implements OnInit {
           alert("Tài khoản của bạn đã bị khoá hoặc sai mật khẩu!");
           this.loading = false;
         });
+  }
+  register(){
+    let newUser = {
+      username : this.registerForm.value.newUserName,
+      password : this.registerForm.value.newPassWord,
+      confirmPassword : this.registerForm.value.newConfirmPassWord
+    }
+    console.log(newUser)
+    this.userService.register(newUser).subscribe(
+      success =>{
+        alert("Đăng kí thành công");
+        this.registerForm.reset()
+      },error1 => {
+        alert("Đăng kí thất bại")
+      }
+    )
   }
 }

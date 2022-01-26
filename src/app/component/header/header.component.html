@@ -4,14 +4,14 @@
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="logo">
-            <!--            <img src="images/logo/logo.png" alt="">-->
+                        <img src="../../../assets/images/logo/logo.png" alt="">
           </div>
         </div>
         <div class="col-md-6 hidden-sm hidden-xs">
           <div class="company-info clearfix">
             <div class="company-info-item">
               <div class="header-icon">
-                <!--                <img src="images/icons/phone.png" alt="">-->
+                                <img src="../../../assets/images/icons/phone.png" alt="">
               </div>
               <div class="header-info">
                 <h6 class="f1">+88 (012) 564 979 56</h6>
@@ -20,7 +20,7 @@
             </div>
             <div class="company-info-item">
               <div class="header-icon">
-                <!--                <img src="images/icons/mail-open.png" alt="">-->
+                                <img src="../../../assets/images/icons/mail-open.png" alt="">
               </div>
               <div class="header-info">
                 <h6 class="f1"><a href="mailto:hnasir770@gmail.com">info@sheltek.com</a></h6>
@@ -107,8 +107,9 @@
                     <li><a href="single-blog.html">Single Bloge</a></li>
                   </ul>
                 </li>
-                <li class="f1" id="logout"><a (click)="logout()">Đăng xuất</a></li>
-                <li class="f1" id="login"><a href="#" [routerLink]="['login/']">Đăng nhập</a></li>
+                <li *ngIf="isLogin()" class="f1" id="logout"><a (click)="logout()">Đăng xuất</a></li>
+                <li *ngIf="isLogin()" class="f1" ><a (click)="logout()">{{username}}</a></li>
+                <li *ngIf="!isLogin()" class="f1" id="login"><a href="#" [routerLink]="['login/']">Đăng nhập</a></li>
               </ul>
             </nav>
           </div>
