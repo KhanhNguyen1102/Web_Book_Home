@@ -32,6 +32,7 @@ export class ListHomeComponent implements OnInit {
         // @ts-ignore
         this.homeService.getListImg(this.homes[i].id).subscribe(result => {
           console.log(result)
+
           this.images?.push(result[0])
           console.log(this.images)
         })
