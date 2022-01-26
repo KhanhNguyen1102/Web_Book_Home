@@ -10,9 +10,6 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./order.component.css']
 })
 export class OrderComponent implements OnInit {
-
-  // idU = localStorage.getItem("USERID");
-  idU=5;
   data?: Hometime[];
   oneDay = 86400000;
   now = new Date();
@@ -20,7 +17,7 @@ export class OrderComponent implements OnInit {
   ed?: string
   time!: boolean;
   currentUser = localStorage.getItem("currentUser");
-
+  idU = localStorage.getItem("USERID");
   @Input() idH?: string;
 
   constructor(private homeTimeService: HometimeService, private activatedRoute: ActivatedRoute,
