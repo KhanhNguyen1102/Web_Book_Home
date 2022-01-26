@@ -3,11 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { FindOneComponent } from './find-one/find-one.component';
+import { OrderComponent } from './order/order.component';
+
 
 
 @NgModule({
   declarations: [
-    FindOneComponent
+    FindOneComponent,
+    OrderComponent,
+
   ],
   imports: [
     CommonModule,

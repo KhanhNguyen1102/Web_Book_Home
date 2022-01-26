@@ -12,7 +12,9 @@
       <!--                             pro-details-image -->
       <div class="pro-details-image mb-60">
         <div class="pro-details-big-image">
-          <div class="tab-content" *ngFor=" let img of image,index as i">
+
+          <div  style=" float: left;margin-top: 10px;margin-right: 13.4px !important;"
+            class="tab-content" *ngFor=" let img of image,index as i">
             <div role="tabpanel" class="tab-pane fade in active" id="pro-{{i}}">
               <a href="../../../../assets/images/{{img.links}}" data-lightbox="image-1" data-title="Sheltek Properties - {{i+1}}" >
                 <img src="../../../../assets/images/{{img.links}}" alt="">
@@ -24,33 +26,7 @@
       </div>
 
       <div id="orderInformation"></div>
-      <div class="row">
-        <div class="col-sm-3 col-xs-12">
-
-          <div class="row">
-            <p class="birth f1"><strong>Ngày nhận phòng: </strong></p>
-            <div style="width: 100% !important;" class="form-group col-sm-3 col-xs-6">
-              <label for="monthStart" class="sr-only"></label>
-              <input id="monthStart" class="form-control input-group-lg" name="dateOfBirth" type="date">
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3 col-xs-12">
-
-          <div class="row">
-            <p class="birth f1"><strong>Ngày trả phòng</strong></p>
-            <div style="width: 100% !important;" class="form-group col-sm-3 col-xs-6">
-              <label for="monthEnd" class="sr-only"></label>
-              <input id="monthEnd" class="form-control input-group-lg" name="dateOfBirth" type="date">
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-5 col-xs-12">
-          <div class="find-home-item mb-0-xs">
-            <button class=" f1 btn-primary " style="width: 110px; height: 40px; border-radius: 7%" onclick="orderHome()">Đặt thuê</button>
-          </div>
-        </div>
-      </div>
+     <app-order [idH]="home?.id" ></app-order>
       <!-- pro-details-short-info -->
       <div class="pro-details-short-info mb-60">
         <div class="row">
